@@ -1,0 +1,21 @@
+@font-face {
+  font-family: "ProximaNova",sans-serif;
+  src: url("../assets/fonts/light.otf") format("otf");
+  font-style: normal;
+  font-weight: normal;
+}
+@font-face {
+  font-family: "ProximaNova",sans-serif;
+  src: url("../assets/fonts/extrabold.otf") format("otf");
+  font-style: normal;
+  font-weight: bold;
+}
+
+// media
+@import "_misc/media";
+//setups
+@import "_misc/layout.scss";
+@import "_misc/blocks/firstBlock.scss";
+@import "_misc/blocks/secondBlock.scss";
+@import "_misc/blocks/thirdBlock.scss";
+@import "_misc/blocks/fourthBlock.scss";

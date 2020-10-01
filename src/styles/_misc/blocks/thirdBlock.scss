@@ -1,0 +1,539 @@
+.thirdBlock{
+  position: relative;
+  background: #323232;
+  padding: 50px;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  @include minDesk{
+    padding: 40px;
+  }
+  @include tablets{
+    padding: 15px;
+    margin: auto;
+  }
+  @include phones{
+    padding: 0;
+    z-index: 0;
+    overflow: hidden;
+  }
+  &:before{
+    @include phones {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background: url("./img/thirdBlock/bg-dark.png");
+      background-repeat: no-repeat;
+      background-size: 152% 115%;
+      //transform: rotate(45deg);
+      z-index: 1;
+    }
+  }
+  & input{
+    display: none;
+  }
+  &__title{
+    font-size: 30px;
+    line-height: 30px;
+    text-transform: uppercase;
+    font-style: italic;
+    text-align: center;
+    font-weight: bold;
+    @include tablets{
+      font-size: 30px;
+      margin-bottom: 100px;
+    }
+    @include phones{
+      display: flex;
+      justify-content: center;
+      width: 230px;
+      margin: 0 auto 100px;
+      font-size: 18px;
+      line-height: 18px;
+      padding-top: 30px;
+      z-index: 2;
+    }
+  }
+  &__container{
+    display: flex;
+    width: 100%;
+    @include tablets {
+      height: 100px;
+      box-sizing: border-box;
+      white-space: nowrap;
+      overflow-x: scroll;
+      overflow-y: hidden;
+      position: relative;
+      -webkit-overflow-scrolling: touch;
+      display: flex;
+      z-index: 1;
+      &::-webkit-scrollbar {
+        width: 5px;
+        opacity: .2;
+      }
+      &::-webkit-scrollbar-thumb {
+        border-radius: 10px;
+        background: linear-gradient(180deg, #3b3a3a, #2a2c2f);
+
+      }
+      //&::-webkit-scrollbar-thumb {
+      //  border-radius: 10px;
+      //  background: transparent;
+      //}
+      &::-webkit-scrollbar-track {
+        -webkit-box-shadow: 5px 5px 5px -5px rgba(34, 60, 80, 0.2) inset;
+        background-color: #f9f9fd;
+        border-radius: 10px;
+
+      }
+      //&::-webkit-scrollbar-track {
+      //  -webkit-box-shadow: transparent;
+      //  background-color: transparent;
+      //  border-radius: 10px;
+      //}
+    }
+    & .containerCtrl{
+      width: 100%;
+      @include tablets {
+        display: inline-block;
+        margin-right: 1%;
+      }
+      @include phones{
+        opacity: .7;
+      }
+    }
+  }
+  &__brands{
+    position: relative;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    @include tablets{
+      position: absolute;
+      top: 70px;
+      left: 5%;
+      width: 90%;
+    }
+   @include phones{
+      top: 100px;
+     z-index: 2;
+    }
+    &__element{
+      position: relative;
+      box-sizing: border-box;
+      background: #3c3c3c;
+      width: 90%;
+      margin: auto;
+      height: 70px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      outline: 5px solid #3c3c3c;
+      & img{
+        width: 100%;
+        object-fit: scale-down;
+      }
+      @include tablets{
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        height: 61px;
+        width: 150px;
+        box-sizing: border-box;
+        background-color: #3c3c3c;
+        border: 6px solid #3c3c3c;
+        cursor: pointer;
+        position: relative;
+        margin: 10px 10px 0px 10px;
+        z-index: 10;
+      }
+      //@include tablets{
+      //  width:120px !important;
+      //  margin: 5px 10px;
+      //  height: 55px;
+      ////}
+      //@media only screen and (max-width: 550px) {
+      //}
+      &:hover{
+        outline: 6px solid #fff;
+        background: #323232;
+      }
+    }
+  }
+  &__info{
+    background: url("./img/thirdBlock/bg-dark.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    margin-top: 50px;
+    @include phones{
+      background: none;
+      z-index: 2;
+    }
+
+    &__element {
+      display: none;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      padding: 50px;
+      @include tablets{
+        flex-direction: column;
+      }
+      @include phones{
+        padding: 10px;
+
+      }
+      & img{
+        width: 50%;
+        @include tablets{
+          width: 100%;
+        }
+        @include phones{
+          width: 65%;
+        }
+      }
+      &__block {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        @include phones{
+          padding: 25px;
+        }
+        &__title{
+          font-size: 30px;
+          line-height: 30px;
+          font-weight: bold;
+          font-style: italic;
+          @include tablets{
+            font-size: 18px;
+            line-height: 18px;
+          }
+        }
+        &__description{
+          font-size: 17px;
+          line-height: 18px;
+          font-weight: normal;
+          font-style: italic;
+          @include minDesk{
+            font-size: 17px;
+            line-height: 18px;
+          }
+          @include phones{
+            margin: 10px 0px;
+            font-size: 15px;
+            line-height: 17px;
+          }
+        }
+      }
+    }
+    & .activeElement{
+      display: flex;
+    }
+  }
+}
+//.radio{
+//  //visibility: hidden;
+//  box-sizing: border-box;
+//  padding: 0;
+//  margin: 0;
+//  height: 100%;
+//  width: 100%;
+//  position: absolute;
+//}
+//.bxSlider-3{
+  //@media only screen and (max-width: 768px) {
+  //  height:105% !important;
+  //  width: 200% !important;
+  //}
+  //@media only screen and (max-width: 610px) {
+  //  height:105% !important;
+  //  width: 200% !important;
+  //}
+//}
+.thirdBlock .bx-wrapper{
+  @media only screen and (max-width: 768px) {
+    max-width: 100% !important;
+    border-left: 1px solid;
+    border-right: 1px solid;
+  }
+  @media only screen and (max-width: 610px) {
+    max-width: 580px !important;
+    border-left: 1px solid;
+    border-right: 1px solid;
+  }
+}
+.thirdBlock .bx-wrapper .bx-viewport{
+  @media only screen and (max-width: 768px) {
+    height: 70px !important;
+  }
+  @media only screen and (max-width: 610px) {
+    height: 70px !important;
+  }
+}
+
+#one:checked ~ .thirdBlock__info #one-panel,
+#two:checked ~ .thirdBlock__info #two-panel,
+#three:checked ~ .thirdBlock__info #three-panel,
+#four:checked ~ .thirdBlock__info #four-panel,
+#fife:checked ~ .thirdBlock__info #fife-panel{
+  display:flex;
+}
+label img {
+  pointer-events: none;
+}
+
+#one:checked ~ .thirdBlock__brands #one-label,
+#two:checked ~ .thirdBlock__brands #two-label,
+#three:checked ~ .thirdBlock__brands #three-label,
+#four:checked ~ .thirdBlock__brands #four-label,
+#fife:checked ~ .thirdBlock__brands #fife-label {
+  outline: 6px #ebb730 solid;
+}
+#one:checked ~ .thirdBlock__brands .containerCtrl-1,
+#two:checked ~ .thirdBlock__brands .containerCtrl-2,
+#three:checked ~ .thirdBlock__brands .containerCtrl-3,
+#four:checked ~ .thirdBlock__brands .containerCtrl-4,
+#fife:checked ~ .thirdBlock__brands .containerCtrl-5 {
+  opacity: 1;
+}
+#one:checked ~ .thirdBlock__brands #one-label:before,
+#two:checked ~ .thirdBlock__brands #two-label:before,
+#three:checked ~ .thirdBlock__brands #three-label:before,
+#four:checked ~ .thirdBlock__brands #four-label:before,
+#fife:checked ~ .thirdBlock__brands #fife-label:before {
+  position: absolute;
+  content: '';
+  top: 75px;
+  background: transparent;
+  width: 0px;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-top: 10px solid #ebb730;
+  @include tablets{
+    top: 58px;
+  }
+  @include phones{
+    top: 58px;
+  }
+}
+#one:checked ~ .thirdBlock__brands #one-label:after,
+#two:checked ~ .thirdBlock__brands #two-label:after,
+#three:checked ~ .thirdBlock__brands #three-label:after,
+#four:checked ~ .thirdBlock__brands #four-label:after,
+#fife:checked ~ .thirdBlock__brands #fife-label:after {
+  position: absolute;
+  content: '';
+  top: 65px;
+  transform: rotate(224deg);
+  background: #3c3c3c;
+  width: 6px;
+  height: 6px;
+  border-bottom: 2px solid #3c3c3c;
+  border-left: 2px solid #3c3c3c;
+  border-right: 2px solid transparent;
+  border-top: 2px solid #3c3c3c;
+  @include tablets{
+    top: 47px;
+  }
+  @include phones{
+    top: 47px;
+  }
+}
+
+#one:checked ~ .bx-wrapper .bx-viewport .thirdBlock__brands #one-label,
+#two:checked ~ .bx-wrapper .bx-viewport .thirdBlock__brands #two-label,
+#three:checked ~ .bx-wrapper .bx-viewport .thirdBlock__brands #three-label,
+#four:checked ~ .bx-wrapper .bx-viewport .thirdBlock__brands #four-label,
+#fife:checked ~ .bx-wrapper .bx-viewport .thirdBlock__brands #fife-label {
+  outline: 3px #ebb730 solid;
+}
+#one:checked ~ .bx-wrapper .bx-viewport .thirdBlock__brands #one-label:before,
+#two:checked ~ .bx-wrapper .bx-viewport .thirdBlock__brands #two-label:before,
+#three:checked ~ .bx-wrapper .bx-viewport .thirdBlock__brands #three-label:before,
+#four:checked ~ .bx-wrapper .bx-viewport .thirdBlock__brands #four-label:before,
+#fife:checked ~ .bx-wrapper .bx-viewport .thirdBlock__brands #fife-label:before {
+  position: absolute;
+  content: '';
+  top: 57px;
+  background: #323232;
+  width: 1px;
+  height: 0px;
+  border-left: 7px solid transparent;
+  border-right: 7px solid transparent;
+  border-top: 7px solid #ebb730;
+}
+#one:checked ~ .bx-wrapper .bx-viewport .thirdBlock__brands #one-label:after,
+#two:checked ~ .bx-wrapper .bx-viewport .thirdBlock__brands #two-label:after,
+#three:checked ~ .bx-wrapper .bx-viewport .thirdBlock__brands #three-label:after,
+#four:checked ~ .bx-wrapper .bx-viewport .thirdBlock__brands #four-label:after,
+#fife:checked ~ .bx-wrapper .bx-viewport .thirdBlock__brands #fife-label:after {
+  position: absolute;
+  content: '';
+  top: 48px;
+  transform: rotate(224deg);
+  background: #3c3c3c;
+  width: 6px;
+  height: 6px;
+  border-bottom: 2px solid #3c3c3c;
+  border-left: 2px solid #3c3c3c;
+  border-right: 2px solid transparent;
+  border-top: 2px solid #3c3c3c;
+}
+
+#one:checked ~ .thirdBlock__brands #two-panel,~.thirdBlock__brands #three-panel,~.thirdBlock__brands #four-panel,~.thirdBlock__brands #fife-panel{
+  display:none;
+}
+#two:checked ~ .thirdBlock__brands #one-panel,~.thirdBlock__brands #three-panel,~.thirdBlock__brands #four-panel,~.thirdBlock__brands #fife-panel{
+  display:none;
+}
+#three:checked ~ .thirdBlock__brands #one-panel,~.thirdBlock__brands #two-panel,~.thirdBlock__brands #four-panel,~.thirdBlock__brands #fife-panel{
+  display:none;
+}
+#four:checked ~ .thirdBlock__brands #one-panel,~.thirdBlock__brands #two-panel,~.thirdBlock__brands #three-panel,~.thirdBlock__brands #fife-panel{
+  display:none;
+}
+#fife:checked ~ .thirdBlock__brands #one-panel,~.thirdBlock__brands #two-panel,~.thirdBlock__brands #three-panel,~.thirdBlock__brands #four-panel{
+  display:none;
+}
+.thirdBlock__brands__element:hover::after{
+  background: #323232 !important;
+  border-bottom-color:#323232 !important;
+  border-left-color:#323232 !important;
+  border-top-color: #323232 !important;
+}
+.thirdBlock {
+  position: relative;
+}
+.thirdBlock-right,.thirdBlock-left {
+  display: none;
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  visibility: visible;
+  z-index: 10000;
+  border: none;
+  padding: 0;
+  outline: none;
+  cursor: pointer;
+  background: transparent;
+  }
+
+.thirdBlock-left {
+  @media only screen and (max-width: 768px) {
+    position: absolute;
+    display: flex;
+    top: 180px;
+    left: 35%;
+    border-radius: 50px;
+  }
+  @media only screen and (max-width: 610px) {
+    top: 125px;
+    left: 35%;
+    border-radius: 50px;
+  }
+  @media only screen and (max-width: 350px) {
+    top: 148px;
+    right: 35%;
+  }
+  &:hover{
+    background: #ffffff;
+    opacity: .5;
+    & a:after{
+      background: #000;
+    }
+    & a:before{
+      background: #000;
+    }
+  }
+    & a {
+      display: block;
+      width: 100% !important;
+      height: 100% !important;
+      &::after {
+        content: "";
+        transform: rotate(-45deg);
+        top: 12px;
+        background: #fff;
+        width: 10px;
+        height: 3px;
+        left: 10px;
+        position: absolute;
+      }
+
+      &::before {
+        content: "";
+        transform: rotate(45deg);
+        bottom: 10px;
+        background: #fff;
+        width: 10px;
+        height: 3px;
+        left: 10px;
+        position: absolute;
+      }
+    }
+  }
+
+.thirdBlock-right {
+  @media only screen and (max-width: 768px) {
+    position: absolute;
+    display: flex;
+    top: 180px;
+    right: 35%;
+    border-radius: 50px;
+  }
+    @media only screen and (max-width: 610px) {
+      display: flex;
+      top: 125px;
+      right: 35%;
+      border-radius: 50px;
+    }
+    @media only screen and (max-width: 350px) {
+      top: 148px;
+      right: 35%;
+    }
+  &:hover{
+    background: #ffffff;
+    opacity: .5;
+    & a:after{
+      background: #000;
+    }
+    & a:before{
+      background: #000;
+    }
+  }
+    & a {
+      display: block;
+      width: 100% !important;
+      height: 100% !important;
+      &::after {
+        content: "";
+        transform: rotate(45deg);
+        top: 12px;
+        background: #fff;
+        width: 10px;
+        height: 3px;
+        left: 10px;
+        position: absolute;
+      }
+      &::before {
+        content: "";
+        transform: rotate(-45deg);
+        bottom: 10px;
+        background: #fff;
+        width: 10px;
+        height: 3px;
+        left: 10px;
+        position: absolute;
+      }
+    }
+  }
+.containerCtrl-5 label{
+  @include phones {
+    margin: 10px 100px 0px 10px;
+  }
+}

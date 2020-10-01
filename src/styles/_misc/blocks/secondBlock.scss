@@ -1,0 +1,401 @@
+.secondBlock {
+  display: flex;
+  flex-direction: column;
+  &__experts {
+    background: url("./img/secondBlock/exp-bg.png");
+    display: grid;
+    grid-template-rows: 200px 200px;
+    grid-auto-flow: column;
+    height: 680px;
+    padding: 50px;
+    @include minDesk{
+      padding: 25px;
+    }
+    @include tablets{
+      display: flex;
+      flex-direction: column;
+      padding: 0;
+      height: 750px;
+    }
+
+    &__title {
+      width: 160px;
+      height: 80px;
+      line-height: 30px;
+      font-size: 30px;
+      font-weight: bold;
+      text-transform: uppercase;
+      font-style: italic;
+      color: white;
+      @include tablets{
+        display: flex;
+        flex-direction: column;
+        line-height: 18px;
+        font-size: 18px;
+        height: 50px;
+        text-align: start;
+        width: 95%;
+        margin: auto;
+        padding: 20px 0 0 0;
+      }
+      @include phones{
+        padding: 40px 0 40px 15px;
+        margin: 0;
+      }
+    }
+
+    &__left {
+      margin-right: 10px;
+      margin-top: -100px;
+    }
+
+    &__right {
+      margin-left: 10px;
+    }
+
+    &__left, &__right {
+      background: #2b2fe0;
+      padding: 25px;
+      height: 420px;
+      //width: 435px;
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: row;
+      @include minDesk{
+        padding: 25px;
+      }
+      @include tablets{
+        height: auto;
+        width: 95%;
+        flex-direction: column;
+        margin: auto;
+      }
+      @include phones{
+        height: auto;
+        width: 93%;
+        flex-direction: column;
+        margin: auto;
+        padding: 15px;
+      }
+      &__title {
+        line-height: 22px;
+        font-size: 20px;
+        font-weight: bold;
+        text-transform: uppercase;
+        font-style: italic;
+        color: white;
+        padding-right: 60px;
+        @media screen and (max-width:1390px){
+          padding-right:25px;
+        }
+        @include tablets{
+          line-height: 15px;
+          font-size: 17px;
+          display: flex;
+          flex-direction: row;
+          justify-content: flex-start;
+        }
+
+
+        & h4 {
+          text-align: left;
+          @include tablets{
+            padding-left: 10px;
+            margin: auto 0;
+          }
+        }
+
+        & img {
+          background: #fff;
+          height: 80px;
+          width: 80px;
+          border-radius: 50px;
+          display: flex;
+          justify-content: center;
+          margin: auto;
+
+          @include tablets{
+            margin: 0;
+          }
+          @include phones{
+            width: 55px;
+            height: 55px;
+          }
+        }
+      }
+
+      &__achievements {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+          @include tablets{
+            padding-top: 20px;
+          }
+        &__element {
+          line-height: 20px;
+          font-size: 18px;
+          color: white;
+          font-weight: normal;
+          font-style: italic;
+          z-index: 5;
+          @media screen and (max-width:1390px){
+            font-size: 17px;
+            line-height: 18px;
+          }
+          @include tablets{
+            padding: 5px 0;
+            line-height: 15px;
+            font-size: 15px;
+          }
+        }
+      }
+    }
+  }
+
+  &__recommend {
+    background: #fff;
+    padding: 50px 0;
+
+    &__title {
+      font-size: 30px;
+      line-height: 30px;
+      font-weight: bold;
+      color: #212853;
+      text-align: center;
+      font-style: italic;
+      text-transform: uppercase;
+      @include phones{
+        font-size: 18px;
+        line-height: 18px;
+      }
+    }
+
+    &__products {
+      margin: 0px auto auto;
+      width: 100%;
+      position: relative;
+      @include minDesk{
+        width: 75%;
+      }
+      @include tablets{
+        width: 80%;
+      }
+      @include phones{
+        width: 70%;
+      }
+
+      & .arrow-right, & .arrow-left {
+        width: 30px;
+        height: 100px;
+        position: absolute;
+        border: none;
+        padding: 0;
+        outline: none;
+        cursor: pointer;
+        background: #242be5;
+      }
+
+      & .arrow-left {
+        top: 109px;
+        left: -38px;
+        //@media screen and (max-width: 550px) {
+        //  top: 70px;
+        //}
+
+        & a {
+          &::after {
+            content: "";
+            transform: rotate(-45deg);
+            top: 44px;
+            background: #fff;
+            width: 10px;
+            height: 3px;
+            left: 10px;
+            position: absolute;
+          }
+
+          &::before {
+            content: "";
+            transform: rotate(45deg);
+            bottom: 47px;
+            background: #fff;
+            width: 10px;
+            height: 3px;
+            left: 10px;
+            position: absolute;
+          }
+        }
+      }
+
+      & .arrow-right {
+        top: 109px;
+        right: -38px;
+        //@media screen and (max-width: 550px) {
+        //  top: 70px;
+        //}
+        & a {
+          &::after {
+            content: "";
+            transform: rotate(45deg);
+            top: 44px;
+            background: #fff;
+            width: 10px;
+            height: 3px;
+            left: 10px;
+            position: absolute;
+          }
+
+          &::before {
+            content: "";
+            transform: rotate(-45deg);
+            bottom: 47px;
+            background: #fff;
+            width: 10px;
+            height: 3px;
+            left: 10px;
+            position: absolute;
+          }
+        }
+      }
+
+      &__block {
+        overflow: hidden;
+        width: 100%;
+        height: 100%;
+        & .bx-wrapper{
+          height: 100% !important;
+          width: 100% !important;
+          max-width: 100% !important;
+        }
+        &__list {
+          margin: 0;
+          padding: 0;
+          display: flex;
+          justify-content: flex-start;
+          width: 100%;
+
+          &__element {
+            width: 273px;
+            border: 1px #d2d7db solid;
+            flex: 0 0 auto;
+            margin: 0 10px;
+            height: 340px;
+            overflow: hidden;
+            @media screen and(max-width: 768px){
+              width: 540px;
+            }
+            //@include phones{
+            //  width: 450px !important;
+            //}
+            //@media screen and (max-width: 550px) {
+            //  width: 220px !important;
+            //  height:250px;
+            //}
+            //@media screen and (max-width: 420px) {
+            //  width: 200px !important;
+            //}
+            & img {
+              display: flex;
+              justify-content: center;
+              object-fit: contain;
+              margin: 10px auto;
+              height: 190px;
+              @include tablets{
+                width: 80%;
+              }
+              @include phones{
+                width: 70%;
+              }
+            }
+
+            &__buy {
+              display: flex;
+              justify-content: space-around;
+              height: 180px;
+              flex-direction: column;
+              text-align: center;
+              background: linear-gradient(to top,
+                      rgba(255, 255, 255, 0.9),
+                      rgba(255, 255, 255, 0.8),
+                      rgba(255, 255, 255, 0.6),
+                      rgba(255, 255, 255, 0.4),
+                      rgba(255, 255, 255, 0.2),
+                      rgba(255, 255, 255, 0.2));
+              transition: .3s;
+              margin-top: 55px;
+              @media screen and (max-width: 550px) {
+                margin-top: 75px;
+                height: 135px;
+              }
+              & h4 {
+                font-size: 20px;
+                text-transform: uppercase;
+                margin: 0;
+                color: #242be5;
+                font-weight: bold;
+                font-style: italic;
+              }
+
+              & p {
+                font-size: 18px;
+                margin: 0;
+                color: #242be5;
+                font-style: italic;
+
+              }
+
+              & a {
+                text-decoration: none;
+                background: #242be5;
+                color: #fff;
+                padding: 15px 21px;
+                border: 1px #242be5 solid;
+                text-transform: uppercase;
+                transition: .3s;
+                margin: auto;
+                width: 100px;
+                font-style: italic;
+              }
+            }
+            &:hover{
+
+            }
+            &:hover &__buy {
+              margin-top: -30px;
+              position: relative;
+              @media screen and (max-width: 550px) {
+                margin-top: -35px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+.arrow-left a,.arrow-right a{
+  display: block;
+  width: 100% !important;
+  height: 100% !important;
+}
+//@keyframes left {
+//  100%{
+//    transform:translateX(-500px);
+//  }
+//}
+//@keyframes right {
+//  100%{
+//    transform:translateX(500px);
+//  }
+//}
+//.secondBlock__recommend__products__block__list:hover{
+//  animation: left 8s infinite;
+//}
+//.arrow-left:hover ~ .secondBlock__recommend__products__block .secondBlock__recommend__products__block__list{
+//  animation: left 8s infinite;
+//}
+//.arrow-right:hover ~ .secondBlock__recommend__products__block .secondBlock__recommend__products__block__list{
+//  animation: right 8s infinite;
+//}
+
+
